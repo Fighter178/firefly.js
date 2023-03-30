@@ -173,7 +173,7 @@ const defineComponent = (comp:component, options?:componentOptions)=>{
                         };
                     };
                     const styleElement = document.createElement("style");
-                    styleElement.textContent = parseNestedCSS(totalString);
+                    styleElement.textContent = "/* Compiled CSS by Firefly.js */" + parseNestedCSS(totalString);
                     funcs.onMount(()=>{
                         self.#shadow.append(styleElement);
                     });

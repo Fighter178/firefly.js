@@ -14,14 +14,8 @@ export default class mHTMLCompiler {
       dom.childNodes.forEach((child) => {
         res.push(this.compileNode(child, findFrom));
       });
-      // Try-catch for safety.
-      try {
-        // shameless.
-        return "<!-- Compiled mHTML, A HTML transpiler/compiler by Firefly.js. Github: https://github.com/Fighter178/firefly.js NPM: https://npmjs.com/firefly.js mHTML: MagicalHTML  -->" + res.join('');
-      } catch (e) {
-        console.warn(e)
-        return res.join('');
-      }
+      
+      return "<!-- Compiled mHTML (magical HTML). Compiled by Firefly.js Github: https://github.com/Fighter178/firelfy.js NPM: https://npmjs.com/firelfly.js -->" + res.join('').trim();
     }
   
     private parseHTML(html: string): DocumentFragment {
@@ -124,7 +118,6 @@ export default class mHTMLCompiler {
         for (const key in variables) {
             resHTML = resHTML.replaceAll(`{${key}}`, variables[key])
         }
-        return
+        return resHTML;
     }
   }
-type compileFunc = (html:string)=>string

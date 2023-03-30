@@ -199,7 +199,7 @@ const defineComponent = (comp, options) => {
                     }
                     ;
                     const styleElement = document.createElement("style");
-                    styleElement.textContent = (0, exports.parseNestedCSS)(totalString);
+                    styleElement.textContent = "/* Compiled CSS by Firefly.js */" + (0, exports.parseNestedCSS)(totalString);
                     funcs.onMount(() => {
                         __classPrivateFieldGet(self, _FireflyElement_shadow, "f").append(styleElement);
                     });
